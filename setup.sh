@@ -15,7 +15,7 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 # Theme settings
-THEME="cachy-ultrawide"
+THEME="cachy"
 THEMES_DIR="themes"
 
 # Welcome
