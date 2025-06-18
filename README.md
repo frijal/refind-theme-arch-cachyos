@@ -5,7 +5,7 @@
 ##### After installation the theme will be set automatically
 
 
-##### Install or uninstall theme:
+##### Install, uninstall and edit theme:
 ```shell
 $ sudo bash setup.sh
 ```
