@@ -16,15 +16,8 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
-# Set directories
+# Set theme source directory
 THEME_DIR=$(dirname "$(realpath "$0")")
-INSTALL_DIR="/boot/EFI/refind/themes/cachy"
-
-# Validate theme structure
-if [[ ! -d "$THEME_DIR/icons" || ! -d "$THEME_DIR/background" ]]; then
-    echo -e "${RED}${bold}Required folders 'icons' or 'background' not found in script directory.${RESET}"
-    exit 1
-fi
 
 # Function to find refind.conf
 function find_refind_conf {
@@ -71,10 +64,12 @@ function ask_for_refind_conf {
     fi
 }
 
-# Function: Install
 function install_theme {
     clear
     ask_for_refind_conf
+
+    REFIND_DIR=$(dirname "$REFOUND_CONF_PATH")
+    INSTALL_DIR="$REFIND_DIR/themes/cachy"
 
     # Remove old installation if exists
     if [ -d "$INSTALL_DIR" ]; then
@@ -156,7 +151,7 @@ use_graphics_for linux,grub,osx,windows
 timeout 10
 EOF
 
-    # Backup + refind.conf
+    # Backup + edit refind.conf
     backup_path="${REFOUND_CONF_PATH}.bak.cachy-theme.$(date +%Y%m%d%H%M%S)"
     echo -e "${YELLOW}Backup: $backup_path${RESET}"
     cp "$REFOUND_CONF_PATH" "$backup_path"
@@ -173,7 +168,9 @@ function uninstall_theme {
     clear
     ask_for_refind_conf
 
-    # Procurar o backup mais recente
+    REFIND_DIR=$(dirname "$REFOUND_CONF_PATH")
+    INSTALL_DIR="$REFIND_DIR/themes/cachy"
+
     local backup_file
     backup_file=$(ls -t "${REFOUND_CONF_PATH}".bak.cachy-theme.* 2>/dev/null | head -n 1 || true)
 
@@ -194,10 +191,13 @@ function uninstall_theme {
     echo -e "\n${GREEN}${bold}Theme removed and backups deleted!${RESET}"
 }
 
-
-
 function reconfigure_theme {
     clear
+    ask_for_refind_conf
+
+    REFIND_DIR=$(dirname "$REFOUND_CONF_PATH")
+    INSTALL_DIR="$REFIND_DIR/themes/cachy"
+
     if [[ ! -f "$INSTALL_DIR/cachy.conf" ]]; then
         echo -e "${RED}${bold}No Cachy theme installation found at: $INSTALL_DIR${RESET}"
         exit 1
@@ -205,7 +205,6 @@ function reconfigure_theme {
 
     echo -e "${CYAN}Cachy theme detected at: ${bold}$INSTALL_DIR${normal}${RESET}"
 
-    # Icon size
     echo -e "\n${CYAN}Pick a new icon size:${RESET}"
     echo -e "${bold}1) Small       (128px - 80px)${normal}"
     echo -e "${bold}2) Medium      (256px - 160px)${normal}"
@@ -221,7 +220,6 @@ function reconfigure_theme {
         *) echo -e "${RED}Invalid choice. Exiting.${RESET}"; exit 1 ;;
     esac
 
-    # Resolution
     echo -e "\n${CYAN}Select new resolution for background:${RESET}"
     echo -e "${bold}1) 1280x720 (16:9)${normal}"
     echo -e "${bold}2) 1920x1080 (16:9)${normal}"
@@ -255,7 +253,6 @@ function reconfigure_theme {
 
     echo -e "${YELLOW}Updating cachy.conf...${RESET}"
 
-    # Atualiza cachy.conf com novo conteúdo
     cat > "${INSTALL_DIR}/cachy.conf" << EOF
 # Theme by diegons490
 big_icon_size $size_big
