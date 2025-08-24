@@ -9,8 +9,6 @@
 ```shell
 $ sudo bash install-refind-themes.sh
 ```
-# Screenshot
-![screenshot](/preview.png?raw=true)
 
 # This is the content of installer script:
 <details>
@@ -318,3 +316,6 @@ esac
   ```
 ...
 </details>
+
+# Screenshot
+![screenshot](/preview.png?raw=true)
