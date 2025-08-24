@@ -10,7 +10,7 @@ sudo pacman -S refind
 ```shell
 sudo bash install-refind-themes.sh
 ```
-##### After installation the theme will be set automatically, You can choose the resolution and size of the icons during installation, you can also change it after the theme is installed.
+##### Themes will be set automatically, You can choose the resolution and size of the icons during installation.
 
 # This is the content of installer script:
 <details>
