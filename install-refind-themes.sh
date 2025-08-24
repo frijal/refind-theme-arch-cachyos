@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+sudo refind-install
+sudo refind-mkdefault
 set -euo pipefail
 
 # Colors and formatting
@@ -106,13 +108,13 @@ function install_theme {
     echo -e "\nSelected size: ${GREEN}Big $size_big px, Small $size_small px${RESET}\n"
 
     # Resolution
-    echo -e "${CYAN}Select screen resolution:${RESET}"
-    echo -e "${bold}1) 1280x720 (16:9)${normal}"
-    echo -e "${bold}2) 1920x1080 (16:9)${normal}"
-    echo -e "${bold}3) 2560x1440 (16:9)${normal}"
-    echo -e "${bold}4) 3840x2160 (16:9)${normal}"
-    echo -e "${bold}5) 3440x1440 (21:9 ultrawide)${normal}"
-    echo -e "${bold}6) 5120x2160 (21:9 ultrawide)${normal}"
+    echo -e "${CYAN}Select monitor screen resolution:${RESET}"
+    echo -e "${bold}1) 1280x720 pixel${normal}"
+    echo -e "${bold}2) 1920x1080 pixel${normal}"
+    echo -e "${bold}3) 2560x1440 pixel${normal}"
+    echo -e "${bold}4) 3840x2160 pixel${normal}"
+    echo -e "${bold}5) 3440x1440 pixel${normal}"
+    echo -e "${bold}6) 5120x2160 pixel${normal}"
     read -rp "$(echo -e ${bold}Enter choice [1-6]: ${normal})" res_select
     res_select=${res_select:-2}
     case "$res_select" in
@@ -220,13 +222,13 @@ function reconfigure_theme {
         *) echo -e "${RED}Invalid choice. Exiting.${RESET}"; exit 1 ;;
     esac
 
-    echo -e "\n${CYAN}Select new resolution for background:${RESET}"
-    echo -e "${bold}1) 1280x720 (16:9)${normal}"
-    echo -e "${bold}2) 1920x1080 (16:9)${normal}"
-    echo -e "${bold}3) 2560x1440 (16:9)${normal}"
-    echo -e "${bold}4) 3840x2160 (16:9)${normal}"
-    echo -e "${bold}5) 3440x1440 (21:9 ultrawide)${normal}"
-    echo -e "${bold}6) 5120x2160 (21:9 ultrawide)${normal}"
+    echo -e "\n${CYAN}Select new monitor resolution for background:${RESET}"
+    echo -e "${bold}1) 1280x720 pixel${normal}"
+    echo -e "${bold}2) 1920x1080 pixel${normal}"
+    echo -e "${bold}3) 2560x1440 pixel${normal}"
+    echo -e "${bold}4) 3840x2160 pixel${normal}"
+    echo -e "${bold}5) 3440x1440 pixel${normal}"
+    echo -e "${bold}6) 5120x2160 pixel${normal}"
     read -rp "$(echo -e ${bold}Enter choice [1-6]: ${normal})" res_select
     res_select=${res_select:-2}
     case "$res_select" in
