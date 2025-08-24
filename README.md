@@ -13,8 +13,6 @@ $ sudo bash install-refind-themes.sh
 ![screenshot](/preview.png?raw=true)
 
 # This is the content of installer script:
-[code](install-refind-themes.sh)
-
 <details>
   <summary>Spoiler Alert: Click to reveal... :)</summary>
 ...
@@ -315,5 +313,5 @@ case "$menu_choice" in
     *) echo -e "${RED}Invalid option. Exiting.${RESET}" && exit 1 ;;
 esac
   ...```
-  
-</details>
+  </details>
+[code](install-refind-themes.sh)
