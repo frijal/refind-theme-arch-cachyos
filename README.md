@@ -320,4 +320,9 @@ esac
 </details>
 
 # Screenshot
-![screenshot](/preview.png?raw=true)
+<div align=center>
+
+  ![screenshot](/preview.png?raw=true)
+![screenshot](/rEFInd-active.jpeg)
+
+</div>
