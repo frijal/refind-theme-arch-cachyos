@@ -7,10 +7,8 @@
 
 ##### Install, uninstall and edit theme:
 ```shell
-$ sudo bash setup.sh
+$ sudo bash install-refind-themes.sh
 ```
-#### To add the CachyOS icon to the boot menu use this script:
-#### https://github.com/diegons490/refind-stanza-creator
 
 # Screenshot
 ![screenshot](/preview.png?raw=true)
