@@ -13,4 +13,4 @@ $ sudo bash install-refind-themes.sh
 ![screenshot](/preview.png?raw=true)
 
 # This is the content of installer script:
-![code]()
+[code](install-refind-themes.sh)
