@@ -318,5 +318,3 @@ esac
   ```
 ...
 </details>
-
-# [code](install-refind-themes.sh)
