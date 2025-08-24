@@ -1,6 +1,7 @@
 # rEFInd Theme CachyOS Arch Linux
-###### AUTHOR: diegons490
+###### AUTHOR: diegons490 fork by me...
 
+##### make sure, rEFInd packages wasintalled in your system, if it is not installed, you can install by 'sudo pacman -S refind'
 ##### After downloading the files, open the terminal in the folder where they are and run the commands to install or uninstall the theme.
 ##### After installation the theme will be set automatically.
 ##### You can choose the resolution and size of the icons during installation, you can also change it after the theme is installed.
@@ -12,7 +13,7 @@ $ sudo bash install-refind-themes.sh
 
 # This is the content of installer script:
 <details>
-  <summary>Spoiler Alert: Click to reveal... :)</summary>
+  <summary>Spoiler Alert: click to reveal... :)</summary>
   
 ...
 ```bash
