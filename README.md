@@ -14,3 +14,12 @@ $ sudo bash install-refind-themes.sh
 
 # This is the content of installer script:
 [code](install-refind-themes.sh)
+
+<details>
+  <summary>Spoiler Alert: Click to reveal!</summary>
+  This is the hidden content that will only be visible after clicking the summary.
+  You can include any Markdown content here, like **bold text**, *italic text*,
+  or even lists:
+  - Item 1
+  - Item 2
+</details>
