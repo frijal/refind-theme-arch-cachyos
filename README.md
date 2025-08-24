@@ -315,8 +315,8 @@ case "$menu_choice" in
     *) echo -e "${RED}Invalid option. Exiting.${RESET}" && exit 1 ;;
 esac
 
-  ...```
-
+  ```
+...
 </details>
 
-[code](install-refind-themes.sh)
+# [code](install-refind-themes.sh)
