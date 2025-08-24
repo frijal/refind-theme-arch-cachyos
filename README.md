@@ -1,4 +1,4 @@
-# CachyOS rEFInd Theme
+# rEFInd Theme CachyOS Arch Linux
 ###### AUTHOR: diegons490
 
 ##### After downloading the files, open the terminal in the folder where they are and run the commands to install or uninstall the theme.
